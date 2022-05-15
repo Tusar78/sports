@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta information -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sports</title>
+    <title>Sports Info</title>
+
+    <!-- Bootstrap CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,14 +14,128 @@
       crossorigin="anonymous"
     />
 
+    <!-- Box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom css file -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <!-- <div class="container mt-3">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-3">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search by player name"
+                id="search-box"
+              />
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="search-btn"
+                onclick="searchPlayer()"
+              >
+                Search
+              </button>
+            </div>
+            <p id="error" class="text-danger fw-light error">
+              <small>
+                Please give the valid name, like : Messi, Ronaldo,Neymar
+              </small>
+            </p>
+          </div>
+
+          <div id="player-container" class="player-container"></div>
+        </div>
+        <div class="col-lg-6">
+          <h4>Player</h4>
+        </div>
+      </div>
+    </div> -->
+    <header class="l-header">
+      <nav class="custom-nav">
+        <div class="container">
+          <ul class="nav__list">
+            <li class="nav-item">
+              <div class="logo">
+                <img
+                  class="logo--png"
+                  src="./assets/images/logo.png"
+                  alt="Sport Logo"
+                />
+                <a class="logo-text nav-link" href="#"> Sport </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav__link" href="#"> Browser </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav__link" href="#">Tutorials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav__link" href="#">Sport API</a>
+            </li>
+            <li class="nav-link nav-item">
+              <div class="nav__search">
+                <a class="nav__search-icon">
+                  <i class="bx bx-search"></i>
+                </a>
+                <div class="nav__search-box">
+                  <input
+                    type="text"
+                    name="player-name"
+                    id="search-player"
+                    placeholder="Search by player name."
+                  />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="l-main">
+      <div class="present container">
+        <h2 class="present__heading">
+          Search to Sports<br />
+          Player Info.
+        </h2>
+        <p class="present__desc">
+          If you want to know about any player <br />
+          then search by typing the name of the player <br />
+          and enjoy it.
+        </p>
+        <div class="present__update">
+          <h4>Get the latest updates.</h4>
+          <div class="input-group present__mail">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Email Address*"
+            />
+            <button class="btn btn-primary present__mail__btn--color" type="button" id="button-addon2">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <!-- Bootstrap script CDN -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Custom script file -->
     <script src="./assets/js/app.js"></script>
   </body>
 </html>

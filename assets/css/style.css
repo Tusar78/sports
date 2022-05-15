@@ -1,0 +1,129 @@
+/* Add poppins or ubuntu fonts from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Skranji:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* font-family: 'Ubuntu', sans-serif; */
+  /* font-family: 'Skranji', cursive; */
+}
+
+/* Custom navigation style */
+.custom-nav {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgb(37 38 94 / 6%);
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo--png {
+  width: 42px;
+  height: 42px;
+}
+
+.logo-text {
+  font-family: "Skranji", cursive;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #00a250;
+  text-transform: uppercase;
+  margin-right: 2.5rem;
+}
+
+.nav__link {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #25265e;
+  margin-right: 1.75rem;
+}
+
+.nav__search {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.nav__search-icon {
+  position: absolute;
+  top: 0.8rem;
+  font-size: 1.6rem;
+  color: #a8a8bf;
+  cursor: pointer;
+}
+
+.nav__search-box input {
+  font-size: 1rem;
+  color: #25265e;
+  padding-left: 2rem;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Presentation design*/
+.present {
+  width: 100%;
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url(../images/background.png) no-repeat;
+  background-size: 600px;
+  background-position: right top 3.9rem;
+}
+
+.present__heading {
+  font-size: 2.25rem;
+  line-height: 1.6;
+  font-weight: 700;
+  color: #25265e;
+  margin-bottom: 1.5rem;
+}
+
+.present__desc {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(37, 38, 94, 0.7);
+  margin-bottom: 3rem;
+}
+
+.present__update h4 {
+  font-size: 1.125rem;
+  color: rgb(37 38 94 / 70%);
+  margin-bottom: 1rem;
+}
+
+.present__mail {
+  width: 380px;
+}
+
+.present__mail input[type="text"] {
+  padding: .625rem;
+}
+
+.present__mail__btn--color {
+  background-color: #4d4dde;
+}
+
+/* 
+.error {
+  display: none;
+}
+
+.player-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+} */
