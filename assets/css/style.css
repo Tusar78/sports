@@ -29,9 +29,10 @@ body {
   align-items: center;
 }
 
-.logo--png {
+.logo__png {
   width: 42px;
   height: 42px;
+  cursor: pointer;
 }
 
 .logo-text {
@@ -54,11 +55,15 @@ body {
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
+  position: relative;
+}
+
+.nav__search-holder {
+  position: absolute;
+  top: -0.1rem;
 }
 
 .nav__search-icon {
-  position: absolute;
-  top: 0.8rem;
   font-size: 1.6rem;
   color: #a8a8bf;
   cursor: pointer;
@@ -73,10 +78,35 @@ body {
   outline: none;
 }
 
+/* Error msg tooltip */
+.error-tooltip {
+  display: none;
+  position: absolute;
+  top: 3.3rem;
+  left: 2rem;
+  background: rgb(255 0 26);
+  color: rgb(255 255 255);
+  font-size: 0.625rem;
+  width: 17rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.error-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -0.3rem;
+  left: 2rem;
+  border-width: 15px 0 0 15px;
+  border-style: solid;
+  border-color: rgb(255 0 0) transparent;
+  transform: rotate(-45deg);
+}
+
 /* Presentation design*/
 .present {
   width: 100%;
-  height: calc(100vh - 64px);
+  height: 571px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -194,7 +224,7 @@ body {
 
 .details__parentImg {
   width: 100%;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   object-fit: cover;
 }
 
@@ -259,13 +289,15 @@ body {
   cursor: pointer;
 }
 
-/* 
-.error {
+/* Spinner design */
+.spinner {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: none;
+  place-items: center;
+  z-index: 99999;
 }
-
-.player-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.5rem;
-} */
