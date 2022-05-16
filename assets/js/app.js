@@ -76,7 +76,7 @@ const displayPlayer = (players) => {
       <h3 class="card__title">${player.strPlayer}</h3>
       <p class="card__desc">${
         player.strDescriptionEN
-          ? (player?.strDescriptionEN).slice(0, 100)
+          ? (player?.strDescriptionEN).slice(0, 90)
           : 'No description available here <i class="bx bx-sad"></i> '
       }</p>
       <div class="btn-container">
