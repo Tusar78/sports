@@ -90,6 +90,7 @@ const searchPlayer = async () => {
     errorMsgStyle("block");
     presentStyle("flex");
   } else {
+    spinnerStyle("grid");
     // Fetch API
     const response = await fetch(
       `${BASE_URL}/searchplayers.php?p=${playerName}`
@@ -98,12 +99,11 @@ const searchPlayer = async () => {
 
     // If data is null
     if (data.player === null) {
+      spinnerStyle("none");
       errorMsgStyle("block");
       presentStyle("flex");
     } else {
-      // When I click on the search button, the present section will be hidden.
-      const presentSection = document.getElementById("present");
-      presentSection.style.display = "none";
+      presentStyle("none");
       errorMsgStyle("none");
       displayPlayer(data.player);
     }
@@ -115,6 +115,7 @@ const searchPlayer = async () => {
 
 // Make a function called displayPlayer
 const displayPlayer = (players) => {
+  spinnerStyle("none");
   const cardContainer = document.getElementById("card-container");
 
   players.forEach((player) => {
