@@ -109,7 +109,7 @@ const detailsPlayer = (player) => {
     <div class="details__images">
       <img
         class="details__parentImg"
-        src="${(player.strFanart1) ? (player.strFanart1) : './assets/images/male-team.jpg'}"
+        src="${(player.strFanart1) ? (player.strFanart1) : (player.strGender === 'Male') ? './assets/images/male-team.jpg' : './assets/images/female-team.jpg'}"
         alt="team img"
       />
       <img

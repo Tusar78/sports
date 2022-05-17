@@ -223,7 +223,8 @@ body {
 }
 
 .details__parentImg {
-  width: 100%;
+  width: 550px;
+  height: 340px;
   border-radius: 0.4rem;
   object-fit: cover;
 }
