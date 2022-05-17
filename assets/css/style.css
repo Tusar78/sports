@@ -159,7 +159,7 @@ body {
 }
 
 .present__mail {
-  width: 380px;
+  max-width: 380px;
 }
 
 .present__mail input[type="text"] {
