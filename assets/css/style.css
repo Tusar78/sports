@@ -29,6 +29,14 @@ body {
 }
 
 @media screen and (max-width: 575.98px) {
+  .nav__search {
+    border: 1px solid red;
+  }
+  .nav__search-box input {
+    width: 100%;
+    padding-right: 1rem;
+  }
+
   .nav__list {
     flex-direction: column;
     align-items: flex-start;
