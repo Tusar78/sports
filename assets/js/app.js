@@ -92,6 +92,7 @@ const displayPlayer = (players) => {
 
 // Make a async function called detailsID
 const detailsId = async (id) => {
+  spinnerStyle("grid");
   const response = await fetch(`${BASE_URL}/lookupplayer.php?id=${id}`);
   const data = await response.json();
   detailsPlayer(data.players[0]);
@@ -99,6 +100,7 @@ const detailsId = async (id) => {
 
 // Make a function called detailsPlayer
 const detailsPlayer = (player) => {
+  spinnerStyle("none");
   const cardContainer = document.getElementById("card-container");
   cardContainer.textContent = ''
   cardContainer.style.display = 'block'
