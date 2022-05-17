@@ -31,6 +31,9 @@ const searchPlayer = async () => {
   const searchPlayer = document.getElementById("search-player");
   const playerName = searchPlayer.value;
 
+  // Clear input filled
+  searchPlayer.value = "";
+
   // When input box empty
   if (playerName === "") {
     errorMsgStyle("block");
@@ -54,15 +57,13 @@ const searchPlayer = async () => {
       displayPlayer(data.player);
     }
   }
-
-  // Clear input filled
-  searchPlayer.value = "";
 };
 
 // Make a function called displayPlayer
 const displayPlayer = (players) => {
   spinnerStyle("none");
   const cardContainer = document.getElementById("card-container");
+  cardContainer.style.display = 'flex';
 
   players.forEach((player) => {
     const div = document.createElement("div");
@@ -80,11 +81,70 @@ const displayPlayer = (players) => {
           : 'No description available here <i class="bx bx-sad"></i> '
       }</p>
       <div class="btn-container">
-        <button type="button" class="card__btn">Read More</button>
+        <button type="button" class="card__btn" onclick="detailsId(${
+          player.idPlayer
+        })">Read More</button>
       </div>
     `;
     cardContainer.appendChild(div);
   });
+};
+
+// Make a async function called detailsID
+const detailsId = async (id) => {
+  const response = await fetch(`${BASE_URL}/lookupplayer.php?id=${id}`);
+  const data = await response.json();
+  detailsPlayer(data.players[0]);
+};
+
+// Make a function called detailsPlayer
+const detailsPlayer = (player) => {
+  const cardContainer = document.getElementById("card-container");
+  cardContainer.textContent = ''
+  cardContainer.style.display = 'block'
+
+  const div = document.createElement("div");
+  div.classList.add("player-details");
+  div.innerHTML = `
+    <div class="details__images">
+      <img
+        class="details__parentImg"
+        src="${(player.strFanart1) ? (player.strFanart1) : './assets/images/male-team.jpg'}"
+        alt="team img"
+      />
+      <img
+        src="${
+          player.strRender
+            ? player.strRender
+            : player.strThumb
+            ? player.strThumb
+            : "./assets/images/demo.png"
+        }"
+        alt="Player img"
+        class="details__img"
+      />
+    </div>
+    <div class="title-subtitle">
+      <h2>${player.strPlayer}</h2>
+      <h5>${player.strNationality ? player.strNationality : "No idea!"}</h5>
+    </div>
+    <div class="details__born">
+      <p><span>Born: </span>${
+        player.dateBorn ? player.dateBorn : "No idea!"
+      }</p>
+      <p><span>Birth Location: </span>${
+        player.strBirthLocation ? player.strBirthLocation : "No idea!"
+      }</p>
+    </div>
+    <p class="details__desc">
+    ${
+      player.strDescriptionEN
+        ? player.strDescriptionEN.slice(0, 500)
+        : "No description available!"
+    }
+    </p>
+  `;
+  cardContainer.appendChild(div);
 };
 
 // Search By enter key
